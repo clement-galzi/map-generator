@@ -24,15 +24,15 @@ class TerrainGenerator {
             for (var z = 0; z < CHUNK_SIZE; z++) {
                 var h = heightMap[x][z]
                 if (h < level[PixelType.Water]) {
-                    chunk.setPixel(x, z, PixelType.Water, h / level[PixelType.Water])
+                    chunk.setHex(x, z, PixelType.Water, h / level[PixelType.Water])
                 } else if (h < level[PixelType.Sand]) {
-                    chunk.setPixel(x, z, PixelType.Sand, h / level[PixelType.Sand])
+                    chunk.setHex(x, z, PixelType.Sand, h / level[PixelType.Sand])
                 } else if (h < level[PixelType.Grass]) {
-                    chunk.setPixel(x, z, PixelType.Grass, h / level[PixelType.Grass])
+                    chunk.setHex(x, z, PixelType.Grass, h / level[PixelType.Grass])
                 } else if (h < level[PixelType.Dirt]) {
-                    chunk.setPixel(x, z, PixelType.Dirt, h / level[PixelType.Dirt])
+                    chunk.setHex(x, z, PixelType.Dirt, h / level[PixelType.Dirt])
                 } else {
-                    chunk.setPixel(x, z, PixelType.Snow, h)
+                    chunk.setHex(x, z, PixelType.Snow, h)
                 }
             }
         }

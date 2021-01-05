@@ -1,6 +1,6 @@
 class Chunk {
     constructor(position) {
-        this.pixels = new Array(CHUNK_SIZE * CHUNK_SIZE)
+        this.hexs = new Array(CHUNK_SIZE * CHUNK_SIZE)
         this.mesh = new Mesh(position)
         this.isLoaded = false
         this.isBuffered = false
@@ -14,12 +14,12 @@ class Chunk {
         }
     }
 
-    setPixel(x, z, type, heightMap = 1) {
-        if (!this.pixels[z * CHUNK_SIZE + x]) {
-            this.pixels[z * CHUNK_SIZE + x] = new Pixel()
+    setHex(x, z, type, heightMap = 1) {
+        if (!this.hexs[z * CHUNK_SIZE + x]) {
+            this.hexs[z * CHUNK_SIZE + x] = new Hex()
         }
-        this.pixels[z * CHUNK_SIZE + x].type = type
-        this.pixels[z * CHUNK_SIZE + x].heightMap = heightMap
+        this.hexs[z * CHUNK_SIZE + x].type = type
+        this.hexs[z * CHUNK_SIZE + x].heightMap = heightMap
     }
 
     draw(renderer) {
@@ -30,7 +30,7 @@ class Chunk {
 
     addToBuffer() {
         if (!this.isBuffered) {
-            this.mesh.add(this.pixels)
+            this.mesh.add(this.hexs)
             this.isBuffered = true
             return true
         }
