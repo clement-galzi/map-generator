@@ -15,10 +15,10 @@ class TerrainGenerator {
         this.chunk = chunk
         const heightMap = this.getHeightMap()
         const level = {
-            [PixelType.Water]: 0.1,
-            [PixelType.Sand]: 0.11,
-            [PixelType.Grass]: 0.3,
-            [PixelType.Dirt]: 0.7
+            [PixelType.Water]: 0.3,
+            [PixelType.Sand]: 0.31,
+            [PixelType.Grass]: 0.35,
+            [PixelType.Dirt]: 0.4
         }
         for (var x = 0; x < CHUNK_SIZE; x++) {
             for (var z = 0; z < CHUNK_SIZE; z++) {
