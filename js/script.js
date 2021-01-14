@@ -1,4 +1,3 @@
-const HEXTILES_IMAGE = new Image();
 HEXTILES_IMAGE.src = '../images/hextiles.png';
 Promise.all([
     new Promise((resolve) => {

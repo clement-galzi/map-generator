@@ -5,22 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="map"></canvas>
-<div style="display:none;">
+<canvas id="canvas"></canvas>
+<div>
+    <img alt="hex" id="source" src="../images/hextiles.png"
+         width="512" height="480">
 </div>
+
 </body>
 <script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/split.js"></script>
 <script type="text/javascript" src="../js/lib/Constants.js"></script>
 <script type="text/javascript" src="../js/lib/Maths.js"></script>
 <script type="text/javascript" src="../js/lib/NoiseGenerator.js"></script>
 <script type="text/javascript" src="../js/lib/TerrainGenerator.js"></script>
-<script type="text/javascript" src="../js/lib/Camera.js"></script>
-<script type="text/javascript" src="../js/lib/Mesh.js"></script>
-<script type="text/javascript" src="../js/lib/Pixel.js"></script>
-<script type="text/javascript" src="../js/lib/Chunk.js"></script>
-<script type="text/javascript" src="../js/lib/ChunkManager.js"></script>
+<script type="text/javascript" src="../js/lib/Hex.js"></script>
+<script type="text/javascript" src="../js/lib/Layout.js"></script>
 <script type="text/javascript" src="../js/lib/World.js"></script>
-<script type="text/javascript" src="../js/lib/Renderer.js"></script>
 <script type="text/javascript" src="../js/lib/Application.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
 </html>
