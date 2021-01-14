@@ -8,9 +8,6 @@ context.canvas.height = WINDOW_HEIGHT
 const seed = Math.random() * 10000
 var noiseGenerator = new NoiseGenerator(seed)
 
-var camera = new Camera({x: 50000, z: 50000})
-var renderer = new Renderer()
-var app = new Application(title, renderer, noiseGenerator, camera)
+var app = new Application(title, noiseGenerator)
 
-app.loadEvents()
-app.runLoop()
+app.drawMap()

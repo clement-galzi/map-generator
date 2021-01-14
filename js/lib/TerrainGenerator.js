@@ -20,8 +20,8 @@ class TerrainGenerator {
             [PixelType.Grass]: 0.3,
             [PixelType.Dirt]: 0.7
         }
-        for (var x = 0; x < CHUNK_SIZE; x++) {
-            for (var z = 0; z < CHUNK_SIZE; z++) {
+        for (var x = 0; x < CHUNK_SIZE; x+= 32) {
+            for (var z = 0; z < CHUNK_SIZE; z+=32) {
                 var h = heightMap[x][z]
                 if (h < level[PixelType.Water]) {
                     chunk.setHex(x, z, PixelType.Water, h / level[PixelType.Water])
