@@ -1,6 +1,7 @@
 class TerrainGenerator {
     constructor(noiseGenerator) {
         this.noiseGenerator = noiseGenerator
+        this.chunk = null
         this.configs = {
             octaves: 9,
             amplitude: 100,
@@ -12,8 +13,14 @@ class TerrainGenerator {
 
     generate() {
         const heightMap = this.getHeightMap()
-        for (var x = 0; x < WINDOW_HEIGHT; x+= 32) {
-            for (var z = 0; z < WINDOW_HEIGHT; z+=32) {
+        const level = {
+            [PixelType.Water]: 0.3,
+            [PixelType.Sand]: 0.31,
+            [PixelType.Grass]: 0.35,
+            [PixelType.Dirt]: 0.4
+        }
+        for (var x = 0; x < CHUNK_SIZE; x+= 32) {
+            for (var z = 0; z < CHUNK_SIZE; z+=32) {
                 var h = heightMap[x][z]
                 if (h < level[PixelType.Water]) {
                     chunk.setHex(x, z, PixelType.Water, h / level[PixelType.Water])
