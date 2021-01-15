@@ -79,9 +79,12 @@ function printHex(idHex, coordX, coordY){
     let coord = getCoordFromId(idHex);
     ctx.drawImage(image, coord[0]*32, coord[1]*48, 32, 48, coordX, coordY, 32, 48);
 }
-for (let i=24; i<50;i++){
-    printHex(147,32*i,50)
-}
+printHex(1,56,34);
+printHex(16,32,48);
+printHex(1,56,62);
+
+
+
 
 
 
