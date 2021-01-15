@@ -8,5 +8,4 @@ Promise.all([
 ]).then(() => {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        ctx.drawImage(HEXTILES_IMAGE, 0, 0);
     });
