@@ -10,6 +10,7 @@ let image = document.getElementById("source");
 
 function initTabHex(){
     let tab = [];
+    let indice = 0;
     for (let i=0; i<10; i++){
         let tabLigne = [];
         for (let j=0; j<16; j++){
@@ -48,11 +49,13 @@ function initTabHex(){
                     j = 16;
                 }
                 else {
-                    tabLigne.push(i*16+j);
+                    tabLigne.push(indice);
+                    indice ++;
                 }
             }
             else {
-                tabLigne.push(i*16+j);
+                tabLigne.push(indice);
+                indice ++;
             }
         }
         tab.push(tabLigne);
@@ -60,17 +63,16 @@ function initTabHex(){
     return tab;
 }
 let tab = initTabHex();
-console.log(initTabHex());
 //Find return undefined quand il ne trouve pas la valeur
 function getCoordFromId(idHex){
     let found;
     let coordX;
     let coordY;
     for (let i=0; i<10; i++){
-        found = tab[i].find(element => element === idHex);
-        if (found !== undefined){
+        found = tab[i].findIndex(element => element === idHex);
+        if (found !== -1){
             coordY = i;
-            coordX = idHex - i*16;
+            coordX = found;
         }
     }
     return [coordX, coordY];
@@ -80,12 +82,5 @@ function printHex(idHex, coordX, coordY){
     ctx.drawImage(image, coord[0]*32, coord[1]*48, 32, 48, coordX, coordY, 32, 48);
 }
 printHex(1,56,34);
-printHex(16,32,48);
-printHex(1,56,62);
-
-
-
-
-
-
-console.log(tab);
+printHex(17,32,48);
+printHex(102,56,62);
