@@ -83,4 +83,4 @@ function printHex(idHex, coordX, coordY){
 }
 printHex(1,56,34);
 printHex(17,32,48);
-printHex(102,56,62);
+printHex(96,56,62);
